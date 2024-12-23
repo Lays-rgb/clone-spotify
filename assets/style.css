@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar content"
+        "aside aside";
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+header {
+    grid-area: header;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #000;
+    margin-top: 8px;
+    z-index: 1000;
+}
+
+.header__logo i {
+    font-size: 32px;
+    margin-left: 10px;
+}
+
+.header__search {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0 250px 8px 420px;
+    gap: 10px;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.header__search button {
+    background-color: #242424;
+    border-radius: 100%;
+    height: 47px;
+    padding: 6px 13px;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.header__search button:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}
+
+.header__searchBar {
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    border-radius: 30px;
+    padding: 5px 16px;
+    flex-grow: 1;
+    max-width: 500px;
+    height: 47px;
+}
+
+.header__searchBar:hover {
+    background-color: #333; 
+}
+
+.header__searchBar input {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    margin-left: 10px;
+    width: 100%;
+    outline: #fff;
+    font-size: 16px;
+    padding: 4px;
+}
+
+.header__searchBar i {
+    color: #B7B3B6;
+    font-size: 20px;
+}
+
+.header__buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.header__buttons .sub{
+    background-color: transparent;
+    color: #B7B3B6;
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+}
+
+.header__buttons .in {
+    height: 40px;
+    background-color: #fff;
+    color: #000;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 70px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+}
+
+
+.header__buttons .sub:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.header__buttons .in:hover {
+    transform: scale(1.1);
+}
+
+.sidebar {
+    margin: 64px 8px;
+    grid-area: sidebar;
+    position: fixed;
+    left: 0;
+    width: 350px;
+    background-color: #121212;
+    padding: 24px 8px;
+    padding-bottom: 90px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.sidebar__library {
+    display: flex;
+    flex-direction: row;
+    padding-left: 16px;
+}
+
+.sidebar__library h5 {
+    color: #B7B3B6;
+    font-size: 16px;
+    margin: 0 50px 0 12px;
+    
+}
+
+.sidebar__library i {
+    color: #B7B3B6;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar__library p {
+    color: #B7B3B6;
+    font-size: 28px;
+    padding-bottom: 4px;
+    margin: 0 16px 0 70px;
+    cursor: pointer;
+    font-weight: 200;
+}
+
+.sidebar__playlist, .sidebar__podcast {
+    background-color: #242424;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow-y: auto;
+}
+
+.sidebar__playlist h1, .sidebar__podcast h1 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.sidebar__playlist p, .sidebar__podcast p {
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.sidebar__playlist button, .sidebar__podcast button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar__playlist button:hover, .sidebar__podcast button:hover{
+    transform: scale(1.1);
+}
+
+.footer__library {
+    padding-left: 16px;
+    gap: 20px;
+    margin-top: 12px;
+}
+
+.footer__library a {
+    color: #a7a7a7;
+    text-decoration: none;
+    font-size: 10px;
+    margin-right: 12px;
+    margin-bottom: 16px;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.footer__library p {
+    font-size: 10px;
+    margin-top: 10px;
+}
+
+.footer__button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 12px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.footer__button:hover {
+    transform: scale(1.1);
+}
+
+.content {
+    grid-area: content;
+    background: linear-gradient(#242424, #121212);
+    margin: 64px 16px;
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
+.content h2 {
+    color: white;
+    font-size: 24px;
+}
+
+.artists__grid, .albums__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    margin-top: 24px;
+    margin-bottom: 40px;
+}
+
+.artists__gridCard, .albums__gridCard{
+    position: relative;
+    padding: 4px 0;
+    text-align: center;
+    cursor: pointer;
+    transition:  background-color 0.2s;
+}
+
+.artists__gridCard h3, .albums__gridCard h3 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.artists__gridCard p, .albums__gridCard p {
+    color: #B7B3B6;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.artists__gridCard:hover, .albums__gridCard:hover{
+    background-color: #282828;
+    border-radius: 8px;
+}
+
+.artists__gridCard img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 100%;
+}
+
+.albums__gridCard img {
+    max-width: 160px;
+    height: auto;
+    border-radius: 8px;
+    
+}
+
+.play__button {
+    position: absolute; 
+    bottom: 38%;
+    right: 10%; 
+    width: 40px; 
+    height: 40px; 
+    background-color: #1db954; 
+    border-radius: 50%; 
+    display: none; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.artists__gridCard:hover .play__button, .albums__gridCard:hover .play__button {
+    display: flex;
+}
+
+.play__button::before {
+    content: ''; 
+    border: solid #000; 
+    border-width: 8px 0 8px 12px; 
+    border-color: transparent transparent transparent #000; 
+    display: block;
+    margin-left: 3px;
+}
+
+hr {
+    border-color: #121212;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.footer__copyrights {
+    margin-bottom: 24px;
+    padding-left: 16px;
+    gap: 20px;
+}
+
+.footer__copyrights a {
+    color: #a7a7a7;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 12px;
+}
+
+aside {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    grid-area: aside;
+    background: linear-gradient(270deg, rgba(74,154,238,1) 0%, rgba(190,39,206,1) 100%);
+    color: white;
+    text-align: left;      
+    padding: 10px 20px;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1000;
+}
+
+.ad {
+    display: flex; 
+    justify-content: space-between;
+    padding: 4px 8px;
+}
+
+.ad h4 {
+    color: #fff;
+    font-size: 13px;
+}
+
+.ad p {
+    color: #fff;
+    font-size: 15px;
+}
+
+.ad button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 200px;
+    cursor: pointer;
+    margin-left: auto;
+    transition: 0.3s;
+}
+
+.ad button:hover{
+    transform: scale(1.1);
+}
